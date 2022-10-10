@@ -8,7 +8,7 @@
 
 Designed with educational purposes, it is limited to just print an image on the screen. No width, height or screen coordinates (X, Y), though adding these features should be a pretty trivial hack.
 
-## Installation
+## Usage
 
 ```sh
 git clone https://github.com/leo-arch/kittyimg
