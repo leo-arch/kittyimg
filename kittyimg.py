@@ -57,7 +57,7 @@ else:
 		payload = base64.standard_b64encode(bytearray().join(map(bytes, image.getdata())))
 	else:
 		cmds.update({'t': 't', 'f': 100, })
-		with NamedTemporaryFile(prefix='clifm_thumb_', suffix='.png', delete=False) as tmpf:
+		with NamedTemporaryFile(prefix='kittyimg_thumb_', suffix='.png', delete=False) as tmpf:
 			image.save(tmpf, format='png', compress_level=0)
 			payload = base64.standard_b64encode(tmpf.name.encode(fsenc))
 
