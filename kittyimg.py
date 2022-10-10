@@ -1,4 +1,4 @@
-#!/bin/python
+#!/bin/env python
 
 import sys
 import PIL.Image
@@ -9,8 +9,6 @@ import codecs
 def format_cmd_str(cmd, payload=None, max_slice_len=2048):
 	central_blk = ','.join(["{}={}".format(k, v) for k, v in cmd.items()]).encode('ascii')
 	if payload is not None:
-		# we add the m key to signal a multiframe communication
-		# appending the end (m=0) key to a single message has no effect
 		while len(payload) > max_slice_len:
 			payload_blk, payload = payload[:max_slice_len], payload[max_slice_len:]
 			yield protocol_start + central_blk + b',m=1;' + payload_blk + protocol_end
@@ -19,10 +17,7 @@ def format_cmd_str(cmd, payload=None, max_slice_len=2048):
 		yield protocol_start + central_blk + b';' + protocol_end
 
 
-# we are going to use stdio in binary mode a lot, so due to py2 -> py3
-# differnces is worth to do this:
 stdbout = getattr(sys.stdout, 'buffer', sys.stdout)
-#stdbin = getattr(sys.stdin, 'buffer', sys.stdin)
 stream = False
 path = sys.argv[1]
 backend = PIL.Image
