@@ -6,7 +6,7 @@
 
 `kittyimg` is a simple python implemention of the [Kitty image protocol](https://sw.kovidgoyal.net/kitty/graphics-protocol/?highlight=image+protocol).
 
-Designed with educational purposes, it is limited to just print an image on the screen. No width, height or screen coordinates (X, Y), thouhg adding these features should be a pretty trivial hack.
+Designed with educational purposes, it is limited to just print an image on the screen. No width, height or screen coordinates (X, Y), though adding these features should be a pretty trivial hack.
 
 ## Installation
 
